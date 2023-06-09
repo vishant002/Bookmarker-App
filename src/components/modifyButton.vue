@@ -1,8 +1,16 @@
 <template>
-    <h2>Modify Bookmark</h2>
-    <div class="box">
-        <label for="method">Title : </label>
-        <input type="text" id="title">
+    <div>
+        <h2 class="middle">Modify Bookmark</h2>
+        <div class="box">
+            <div>
+                <label for="method">Title : </label>
+                <input type="text" id="title">
+            </div>
+            <br>
+            <div>
+                <button class="button">Search</button>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -12,6 +20,18 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.box{
+    border: 1.3px solid black;
+    padding: 10px;
+    margin: auto;
+    width:50%;
+}
+.middle{
+    text-align: center;
+}
 
+.button{
+    margin-left: 35%;
+}
 </style>
