@@ -1,0 +1,89 @@
+<template>
+  <h1>bookMarker.com</h1>
+  <br>
+  <div>
+    <button @click="showAdd">ADD</button>&nbsp;&nbsp;
+    <button @click="showModify">MODIFY</button>&nbsp;&nbsp;
+    <button @click="showSearch">SEARCH</button>&nbsp;&nbsp;
+    <button @click="showDelete">DELETE</button>
+  </div>
+  <component :is="activated" > {{ button_name }} </component>
+  
+</template>
+
+<script>
+import addButton from './components/addButton.vue'
+import searchButton from './components/searchButton.vue'
+import deleteButton from './components/deleteButton.vue'
+import modifyButton from './components/modifyButton.vue'
+
+export default {
+  name: 'App',
+  components:{
+      addButton,
+      searchButton,
+      deleteButton,
+      modifyButton,
+  },
+  data(){
+    return{
+      activated:'',
+    }
+  },
+  methods:{
+    closeAdd(){
+      this.activated='';
+    },
+    showAdd(){
+      if(this.activated == 'addButton'){
+          this.activated='';
+      }
+      else{
+        this.activated='addButton';
+      }
+    },
+    showDelete(){
+      if (this.activated == 'deleteButton') {
+        this.activated = '';
+      }
+      else {
+        this.activated = 'deleteButton';
+      }
+    },
+    showModify(){
+      if (this.activated == 'modifyButton') {
+        this.activated = '';
+      }
+      else {
+        this.activated = 'modifyButton';
+      }
+    },
+    showSearch(){
+      if (this.activated == 'searchButton') {
+        this.activated = '';
+      }
+      else {
+        this.activated = 'searchButton';
+      }
+    }
+  }
+  
+}
+</script>
+
+<style >
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+
+.cen{
+  margin-left: 45px;
+  align-content: center;
+}
+</style>
